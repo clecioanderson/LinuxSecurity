@@ -2,5 +2,4 @@
 
 checklist de configurações aplicáveis
 
-1 - 
-testando
+1 - testando 
