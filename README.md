@@ -2,10 +2,10 @@
 
 ## Checklist de Configurações 
 
-*Implementação de Hardening
+- Implementação de Hardening
 
-*Controlar acesso usando PAM
+- Controlar acesso usando PAM
 
-*Implementar PortKnocking
+- Implementar PortKnocking
 
-*Realizar checklist de serviços ativos
+- Realizar checklist de serviços ativos
