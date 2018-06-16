@@ -1,6 +1,6 @@
 #  Linux Security
 
-## checklist de configurações aplicáveis
+## Checklist de Configurações 
 
 1 - Implementação de Hardening
 
