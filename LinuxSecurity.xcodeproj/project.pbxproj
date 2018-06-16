@@ -8,8 +8,8 @@
 
 /* Begin PBXFileReference section */
 		B921B8DA20D49549005498A3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B921B8DB20D4AD33005498A3 /* Hardening.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Hardening.md; sourceTree = "<group>"; };
 		B921B8DE20D4ADE6005498A3 /* hardening.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = hardening.sh; sourceTree = "<group>"; };
+		B921B8E020D541CC005498A3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -24,8 +24,8 @@
 		B921B8DD20D4ADCD005498A3 /* Hardening */ = {
 			isa = PBXGroup;
 			children = (
-				B921B8DB20D4AD33005498A3 /* Hardening.md */,
 				B921B8DE20D4ADE6005498A3 /* hardening.sh */,
+				B921B8E020D541CC005498A3 /* README.md */,
 			);
 			path = Hardening;
 			sourceTree = "<group>";
