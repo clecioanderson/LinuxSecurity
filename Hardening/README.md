@@ -20,4 +20,6 @@
     - Restringir sessões simultâneas
     - Aplicar politica de complexidade de senhas
     - Controle de uso do comando SU
+6. Localizar senhas fracas [ John the Ripper ]
+7. Verificar serviços ativos
    

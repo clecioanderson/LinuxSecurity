@@ -210,19 +210,78 @@ done
 #
 # knockd 192.168.200.5 5409 4930 6909
 #
+#### Localizar senhas fracas ######
 #
+# Podemos usar o programa John the Ripper para localizar senhas fracas então
+# solicitar que os usuários alterem conforme necessário
 #
+# wget http://www.openwall.com/john/j/john-1.8.0-jumbo-1.tar.gz
 #
-
-
-
-
-
-
-
-
-
-
-
-
+# ./john /etc/shadow # para realizar um processamento de senhas fracas
+# ./john --wordlist=lista /etc/shadow # para realizar um processamento de senhas fracas
+# ./john --show /etc/shadow  # para exibir senhas fracas já encontradas
+# ./john --restore  # Para continuar um processamento inacabado
+#
+# http://openwall.com/john/doc/EXAMPLES.shtml
+#
+##### Precisamos checar os serviços ativos na maquina ########
+#
+# cat /etc/services
+# netstat -ntlp
+# netstat -nulp
+# netstat -an
+#
+# Precisamos ainda checar quais usuários estão executando os serviços que estão sendo usados
+# precisamos instalar o pacote psmisc. Entre os serviços em execução podemos ter algum que não
+# seja amplamente conhecido o que ensejaria a necessidade de checar se não é um serviço forjado
+#
+# apt-get install psmisc
+#
+# Podemos executar o comando abaixo que retornará o processo que executa o serviço relacionad
+# fuser -v 65123/tcp
+#
+# Com a informação do processo relacionado podemos agora checar no /proc as informações do processo
+# e assegurar de que não é um programa forjado
+#
+# cat /proc/3493/cmdline
+#
+# Para listar raw sockets podemos usar o comando abaixo
+#
+# netstat -nlpw
+#
+#### Verificar portas remotas de outros servidores #####
+#
+# nmap -sU endereçoIP # para listar/escanear portas UDP
+# nmap -sT endereçoIP # para listar/escanear portas TCP
+# nmap -sT -p porta endereçoIP # para listar/escanear porta TCP especifica
+# nmap -O endereçoIP # para exibir informações do sistema operacional
+#
+#### Desativando serviços desnecessários ########
+#
+# Podemos inicialmente listar todos os serviços existentes sendo iniciados com o boot do sistema:
+# ls -ls /etc/rc2.d/
+#
+# insserv -f nomedoservico remove
+#
+#### Configurações de Segurança para o GRUB #####
+# Através do GRUB é possível alterar a senha do administrador do servidor
+# Podemos evitar que usuários não autorizados tenham acesso a essa função ao implementar
+# uma senha segura para o GRUB
+#
+# (echo senha ; echo senha) | grub-mkpasswd-pbkdf2 >> /etc/grub.d/00_header
+# vim /etc/grub.d/00_header
+#
+# Após gerar a senha para o grub adicione as linhas abaixo no final de sua configuração do GRUB
+#
+# CAT << EOF
+# set superusers="4linux"
+# password_pbkdf2 4linux
+# grub.pbkdf2.sha512.10000XXXXXXXXX.<hash>
+# EOF
+#
+# Após finalizar as alterações no arquivo execute os comandos abaixo para validar as alterações
+#
+# update-grub
+# reboot
+#
 
