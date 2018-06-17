@@ -29,3 +29,22 @@ exit;;
 echo "Opcao Invalida!!"
 sleep 3
 exit;; esac
+
+### Montar Disco com Opções seguras ###
+
+case $1 in
+start|Start|START)
+mount -o remount,rw,exec /tmp
+mount -o remount,rw,exec /var
+echo "Partições /var /tmp com permissões de execução"
+exit 0
+;;
+stop|Stop|STOP)
+mount -o remount,rw,noexec,nosuid /tmp
+mount -o remount,rw,noexec,nosuid /var
+echo "Partições /var /tmp com permissões de execução"
+exit 0
+;;
+*)
+echo "Erro! Use $0 {start|stop}"
+esac
