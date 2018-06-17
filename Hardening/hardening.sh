@@ -94,10 +94,7 @@ esac
 # O comando acima mantem a conta valida por 30 dias, passado esse tempo, se a conta ficar sem utilização
 # por 2 dias é automaticamente bloqueada. O usuario receberá 5 dias antes o aviso que sua senha expirará.
 #
-#
-#
 # Script para aplicar politica de senha a todos usuarios
-#
 #
 for usuarios in $(getent passwd| awk -F: ' $3 >= 1000 {print $1}');
 do
@@ -109,7 +106,7 @@ done
 # É uma boa prática procurar usuários que não precisam de shell e remover conforme necessário
 # esse acesso a shell
 
-for usuarios in $(getenet passwd | awk -F: '{print $1}' | grep -v root | grep -v [outros usuarios]
+for usuarios in $(getent passwd | awk -F: '{print $1}' | grep -v root | grep -v [outros usuarios]
 do
 usermod -s /bin/false $usuarios
 done
