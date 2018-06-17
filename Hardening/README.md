@@ -10,3 +10,10 @@
     - Editar /etc/fstab
     - Podemos aplicar tais politicas de montagem para partições mais vulneráveis a exploração por ameaças. (Ex.: /tmp /var /home)
     - Pode ser uma boa prática em ambientes onde as alterações sejam muito frequentes criar um script que possa montar/remontar as partições com as opções NOSUID, NOEXEC.
+4. Desabilitar opções padrão do terminal que sejam inseguras
+   - Desabilitar ctrl+alt+del no inittab (/etc/inittab)
+   - Habilitar timeout de sessão de terminal por inatividade TMOUT
+   - Restringir login de root nos terminais locais
+   - Restringir validade de contas de usuários
+   
+   
