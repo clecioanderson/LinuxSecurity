@@ -13,7 +13,7 @@ dpkg -l | awk '{print $2,$3}' | sed "1,5d" > /tmp/servicosinstalados.lst
 ### Localizar arquivos com SUID, SGID e STICKY bit ativados ###
 
 echo "Localizando arquivos..."
-find / -perm /7000 > /tmp/listarquivos_suid.lst
+find / -perm 7000 > /tmp/listarquivos_suid.lst
 find / -perm 2000 > /tmp/listarquivos_sgid.lst
 find / -perm 1000 > /tmp/listarquivos_sticky.lst
 read acao
