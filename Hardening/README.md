@@ -15,5 +15,9 @@
    - Habilitar timeout de sessão de terminal por inatividade TMOUT
    - Restringir login de root nos terminais locais
    - Restringir validade de contas de usuários
-   
+5. Implementar PAM para gerenciamento de autenticação e sessões de usuários
+    - Login em horários específicos
+    - Restringir sessões simultâneas
+    - Aplicar politica de complexidade de senhas
+    - Controle de uso do comando SU
    
