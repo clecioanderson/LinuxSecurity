@@ -16,7 +16,16 @@ echo "Localizando arquivos..."
 find / -perm /7000 > /tmp/listarquivos_suid.lst
 find / -perm 2000 > /tmp/listarquivos_sgid.lst
 find / -perm 1000 > /tmp/listarquivos_sticky.lst
-
-
-
-
+read acao
+case $acao in
+s|S)
+chmod -Rv -s /
+echo "Permissoes suid bit removidas"
+sleep 2
+exit;;
+N|n)
+exit;;
+*)
+echo "Opcao Invalida!!"
+sleep 3
+exit;; esac
